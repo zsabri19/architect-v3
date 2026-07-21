@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-void text-dawn font-body antialiased;
+  }
+
+  ::selection {
+    background: rgba(201, 162, 39, 0.35);
+    color: #f5f5f7;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a3a4e;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c9a227;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-gold text-xs font-semibold uppercase tracking-[0.25em] mb-4;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold text-void font-semibold uppercase tracking-wide text-sm px-7 py-4 rounded-lg transition-all duration-300 hover:bg-shine hover:-translate-y-0.5;
+    box-shadow: 0 0 40px rgba(201, 162, 39, 0.15);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-dawn/40 text-dawn font-medium text-sm px-7 py-4 rounded-lg transition-all duration-300 hover:bg-dawn hover:text-void hover:-translate-y-0.5;
+  }
+
+  .card-dark {
+    @apply bg-shadow border border-faint/40 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1;
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-gold-edge {
+    @apply bg-shadow rounded-xl p-7 border-l-4 border-gold;
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 60px rgba(201, 162, 39, 0.18);
+  }
+}
