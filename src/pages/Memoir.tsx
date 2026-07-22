@@ -255,7 +255,7 @@ export default function Memoir() {
         <SectionHead
           eyebrow="About the Book"
           title="A Story of Clarity Forged in Crisis"
-          sub="In 1989, when war forced his family from Kuwait to Pakistan, Zeeshan Sabri experienced exile before he understood the word."
+          sub="In 1990, when war forced his family from Kuwait to Pakistan, Zeeshan Sabri experienced exile before he understood the word."
         />
         <div className="grid lg:grid-cols-2 gap-10 mt-12 items-start">
           <Reveal>
