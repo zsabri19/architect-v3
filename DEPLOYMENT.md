@@ -19,40 +19,40 @@ live site at `architect.global-mkts.com`.
   - `cbo.png` (Central Bank of Oman) → dark background `#1a1a2e`
   - `ncm.png` (National Center of Meteorology) → white background
 
-## Phase 2: Cloudflare Pages Deployment (Planned)
+## Phase 2: Cloudflare Pages Deployment (Complete — 2026-07-22)
 
-Cloudflare is the target hosting platform. We will use **Cloudflare Pages** because:
-- The site is a static SPA (no server-side runtime needed)
-- Vite build output is `dist/`
-- Cloudflare already hosts the current domain
+**LIVE:** `https://architect.global-mkts.com` now serves this codebase via Cloudflare Pages.
 
-### Proposed Cloudflare Pages Configuration
+### Deployed Configuration
 
 | Setting | Value |
 |---|---|
-| **Project name** | `architect-v3` |
-| **Production branch** | `main` |
-| **Framework preset** | Vite |
+| **Pages project** | `architect-v3` |
+| **Pages URL** | `https://architect-v3.pages.dev` |
+| **Custom domain** | `architect.global-mkts.com` (proxied) |
+| **Deploy method** | Direct Upload via `wrangler pages deploy dist` |
 | **Build command** | `npm run build` |
 | **Build output directory** | `dist` |
-| **Node version** | `20` or `22` |
-| **Root directory** | `app` (if monorepo layout) or `/` (if repo root is the app) |
+| **SPA fallback** | `public/_redirects` → `/* /index.html 200` |
 
-### Domain Strategy
+### DNS Change Log
 
-| Environment | Domain | Purpose |
-|---|---|---|
-| **Staging** | `architect-v3.global-mkts.com` | Testing and content review |
-| **Production** | `architect.global-mkts.com` | Final switchover |
+- Previous: `architect.global-mkts.com` CNAME → `zsabri19.github.io` (GitHub Pages, was down)
+- Current: `architect.global-mkts.com` CNAME → `architect-v3.pages.dev` (proxied via Cloudflare)
 
-### DNS / Cloudflare Steps (when ready)
+### Deploying Updates
 
-1. Create Cloudflare Pages project from the GitHub repo
-2. Verify build succeeds on Cloudflare's CI
-3. Add custom domain `architect-v3.global-mkts.com` for staging
-4. Review staging site thoroughly
-5. When approved, update `architect.global-mkts.com` DNS record to point to the new Pages project
-6. Decommission or archive the old `architect.global-mkts.com` origin
+```bash
+cd app
+npm run build
+npx wrangler pages deploy dist --project-name architect-v3 --branch main
+git add -A && git commit -m "<message>" && git push
+```
+
+### Notes
+
+- The wrangler OAuth token lacks `dns_records:edit`, so DNS changes must be made in the Cloudflare dashboard.
+- GitHub-connected CI builds are not configured; deployments are done manually via wrangler Direct Upload.
 
 ## Build Verification
 
