@@ -1,7 +1,8 @@
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
+import { AWARD_LABEL, AWARD_URL } from "@/lib/content";
 
 const SERVICES = [
   { t: "Board Advisory", d: "Governance, transformation oversight, and strategic direction for boards navigating digital and organisational change." },
@@ -36,6 +37,15 @@ export default function Advisory() {
         title="Board counsel for transformations that cannot afford to drift"
         lead="Board-level counsel, executive advisory, and leadership development for GCC organisations navigating complex transformation."
       >
+        <a
+          href={AWARD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-7 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+        >
+          <Award size={14} className="shrink-0" />
+          {AWARD_LABEL}
+        </a>
         <div className="mt-9 flex flex-col sm:flex-row gap-4">
           <Link to="/connect" className="btn-gold">Request a Proposal <ArrowRight size={16} /></Link>
           <Link to="/media" className="btn-ghost">See the Work in the Field</Link>

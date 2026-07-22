@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Award, Check } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { LogoStrip, Section, SectionHead } from "@/components/shared";
-import { ENGAGEMENT_PATHS, STRIPE_SESSION_URL, TESTIMONIALS } from "@/lib/content";
+import { AWARD_LABEL, AWARD_URL, ENGAGEMENT_PATHS, STRIPE_SESSION_URL, TESTIMONIALS } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -19,6 +19,15 @@ export default function Home() {
             <p className="mt-7 text-lg lg:text-xl text-mist leading-relaxed max-w-xl">
               ClarityOS helps founders, executives, and leadership teams diagnose the real blocker, align decisions and ownership, and install the operating rhythm that makes change stick.
             </p>
+            <a
+              href={AWARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+            >
+              <Award size={14} className="shrink-0" />
+              {AWARD_LABEL}
+            </a>
             <div className="mt-8 flex flex-wrap gap-3">
               {["20+ years inside Fortune 500 transformation", "Governance, procurement, crisis-tested execution", "Clarity before scale"].map((c) => (
                 <span key={c} className="text-xs text-dawn/90 bg-depth border border-faint/50 rounded-full px-4 py-2">{c}</span>
@@ -107,7 +116,7 @@ export default function Home() {
       <Section>
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
           <Reveal>
-            <img src="/images/origin.jpg" alt="The origin of ClarityOS" className="rounded-3xl border border-faint/50 w-full object-cover" />
+            <img src="/images/hero-v1-backup.jpg" alt="The origin of ClarityOS" className="rounded-3xl border border-faint/50 w-full object-cover" />
           </Reveal>
           <div>
             <SectionHead eyebrow="The Origin" title="Built from 20 years of witnessing failure" />
@@ -119,6 +128,46 @@ export default function Home() {
             </p>
             <Link to="/architect" className="btn-ghost mt-8">Read the Origin Story <ArrowRight size={16} /></Link>
           </div>
+        </div>
+      </Section>
+
+      {/* MEMOIR / AWARD PATH */}
+      <Section className="bg-shadow/40">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div>
+            <SectionHead eyebrow="The Memoir" title="From Exile to Transformation" />
+            <p className="mt-6 text-mist leading-relaxed">
+              The book behind the methodology. From the Gulf War to Fortune 500 boardrooms, and the award that recognized ClarityOS as the world’s first Pre-Governance Operating System.
+            </p>
+            <a
+              href={AWARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+            >
+              <Award size={14} className="shrink-0" />
+              {AWARD_LABEL}
+            </a>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link to="/memoir" className="btn-gold">
+                Explore the Memoir <ArrowRight size={16} />
+              </Link>
+              <a href={AWARD_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                Read the Press Release <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+          <Reveal delay={120}>
+            <div className="card-gold-edge p-8">
+              <blockquote className="font-display text-xl lg:text-2xl italic leading-relaxed text-dawn/90">
+                "We are seeing a maturity shift in the GCC. Leaders are realizing that you cannot install a First World governance system on a broken human operating system."
+              </blockquote>
+              <p className="text-gold text-sm uppercase tracking-wider mt-4">— Zeeshan Sabri, Founders 2.0 Conference, Dubai</p>
+              <p className="text-mist text-sm mt-5 leading-relaxed">
+                The Entrepreneurial Excellence Award recognized ClarityOS as the world’s first Pre-Governance Operating System, currently deployed across national-scale digital banking, telecom, and defense procurement transformations serving 5 million+ users.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </Section>
 

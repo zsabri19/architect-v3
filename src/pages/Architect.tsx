@@ -1,6 +1,7 @@
+import { Award } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { LogoStrip, PageHero, Section, SectionHead } from "@/components/shared";
-import { RECOGNITION } from "@/lib/content";
+import { AWARD_LABEL, AWARD_URL, RECOGNITION } from "@/lib/content";
 
 const TIMELINE = [
   {
@@ -40,7 +41,17 @@ export default function Architect() {
         eyebrow="The Architect"
         title="From exile to transformation architect"
         lead="Born between worlds, forged in Fortune 500 crucibles, built to solve what ordinary frameworks cannot."
-      />
+      >
+        <a
+          href={AWARD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-7 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+        >
+          <Award size={14} className="shrink-0" />
+          {AWARD_LABEL}
+        </a>
+      </PageHero>
 
       <Section>
         <div className="relative max-w-3xl mx-auto">
@@ -68,6 +79,24 @@ export default function Architect() {
 
       <Section className="bg-shadow/40">
         <SectionHead eyebrow="Recognition" title="The record, on the wall" sub="Awards, keynotes, and credentials earned across two decades of transformation work." />
+        <div className="max-w-4xl mx-auto mt-10">
+          <Reveal>
+            <a
+              href={AWARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-gold-edge flex items-center gap-4 p-5 mb-8 group"
+            >
+              <span className="w-12 h-12 rounded-full bg-depth border border-gold/50 flex items-center justify-center text-gold shrink-0">
+                <Award size={22} />
+              </span>
+              <div className="flex-1">
+                <p className="font-display text-lg font-semibold text-dawn group-hover:text-gold transition-colors">{AWARD_LABEL}</p>
+                <p className="text-mist text-xs mt-1">Recognized for pioneering ClarityOS as the world’s first Pre-Governance Operating System.</p>
+              </div>
+            </a>
+          </Reveal>
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
           {RECOGNITION.map((r, i) => (
             <Reveal key={r.caption} delay={i * 80}>

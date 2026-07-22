@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight, Award, Play } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
-import { FIELD_GALLERY, INSTAGRAM, INSTAGRAM_REELS, QUOTE_CARDS, YOUTUBE } from "@/lib/content";
+import { AWARD_LABEL, AWARD_URL, FIELD_GALLERY, INSTAGRAM, INSTAGRAM_REELS, QUOTE_CARDS, YOUTUBE } from "@/lib/content";
 
 function ReelCard({ id, label }: { id: string; label: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -39,7 +39,17 @@ export default function Media() {
         eyebrow="Media"
         title="The field, in writing, on stage, and in the room"
         lead="Talks, conversations, workshops, and public moments from the work behind ClarityOS."
-      />
+      >
+        <a
+          href={AWARD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-7 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+        >
+          <Award size={14} className="shrink-0" />
+          {AWARD_LABEL}
+        </a>
+      </PageHero>
 
       {/* YOUTUBE */}
       <Section className="bg-shadow/40">

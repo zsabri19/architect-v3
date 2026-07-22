@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
-import { EIGHT_C, STRIPE_SESSION_URL } from "@/lib/content";
+import { AWARD_LABEL, AWARD_URL, EIGHT_C, STRIPE_SESSION_URL } from "@/lib/content";
 
 const PHASES = [
   { phase: "Phase 1", weeks: "Weeks 1 to 3", title: "Diagnosis", items: ["Human OS assessment", "Decision architecture audit", "Ownership and alignment mapping", "Leadership interviews and field evidence"] },
@@ -18,6 +18,15 @@ export default function ClarityOS() {
         title="Fix the human layer before scale"
         lead="90% of transformations fail because execution outruns alignment. ClarityOS stabilises the human layer before scale."
       >
+        <a
+          href={AWARD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-7 inline-flex items-center gap-2.5 border border-gold/40 rounded-full px-4 py-2.5 text-xs text-gold uppercase tracking-[0.15em] hover:bg-gold/10 transition-colors"
+        >
+          <Award size={14} className="shrink-0" />
+          {AWARD_LABEL}
+        </a>
         <div className="mt-9 flex flex-col sm:flex-row gap-4">
           <a href={STRIPE_SESSION_URL} target="_blank" rel="noopener" className="btn-gold">Book the $79 Session <ArrowRight size={16} /></a>
           <Link to="/connect" className="btn-ghost">Enterprise Enquiry</Link>

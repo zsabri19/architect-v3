@@ -1,5 +1,5 @@
 export const STRIPE_SESSION_URL = "https://buy.stripe.com/00w28q41PdjveV2bfWcV201";
-export const EMAIL = "ClarityOS@global-mkts.com";
+export const EMAIL = "zeeshan@global-mkts.com";
 export const LINKEDIN = "https://www.linkedin.com/in/zeeshan-sabri-75760a26";
 export const YOUTUBE = "https://www.youtube.com/@ZeeshanSabri83";
 export const INSTAGRAM = "https://www.instagram.com/zsabri/";
@@ -7,6 +7,11 @@ export const TIKTOK = "https://www.tiktok.com/@zsabri83";
 export const MAILCHIMP_ACTION = "https://global-mkts.us3.list-manage.com/subscribe/post";
 export const MAILCHIMP_U = "38399e57f8cf7c6d2b1055b16";
 export const MAILCHIMP_ID = "f64785d6c9";
+
+export const AWARD_URL =
+  "https://news.marketersmedia.com/paradigm-shift-in-gcc-transformation-zeeshan-sabri-wins-entrepreneurial-excellence-award-for-pioneering-clarityos-methodology/89181228";
+export const AWARD_LABEL =
+  "Winner, Entrepreneurial Excellence Award — Founders 2.0 Conference, Dubai, December 2025";
 
 export const NAV_LINKS = [
   { to: "/", label: "Home" },
