@@ -73,4 +73,46 @@
   .gold-glow {
     box-shadow: 0 0 60px rgba(201, 162, 39, 0.18);
   }
+
+  /* Book design project styles */
+  .font-book-display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  .font-book-body {
+    font-family: "Crimson Pro", Georgia, serif;
+  }
+
+  .font-book-accent {
+    font-family: "Cormorant SC", Georgia, serif;
+  }
+
+  .book-gold-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  }
+
+  .book-gold-line-left {
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, transparent);
+  }
+
+  .book-paper {
+    background-color: #f5f1e8;
+    color: #1a2d4d;
+  }
+
+  .book-paper-texture {
+    background-color: #f5f1e8;
+    background-image: radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(26, 45, 77, 0.02) 0%, transparent 50%);
+  }
+
+  .book-navy {
+    color: #1a2d4d;
+  }
+
+  .book-gold {
+    color: #d4af37;
+  }
 }

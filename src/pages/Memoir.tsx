@@ -1,20 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router";
-import { Award, ArrowRight, BookOpen, Lightbulb, Globe, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, ArrowRight, BookOpen, Lightbulb, Globe, Mail } from "lucide-react";
 import { CTABand, NewsletterForm, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
 import { AWARD_LABEL, AWARD_URL, EMAIL } from "@/lib/content";
 
-const BOOK_COVER = "/images/book/cover.png";
+import { InteriorBookPreview } from "@/components/book-interior";
 
-const INTERIOR_IMAGES = [
-  { src: "/images/book/opening.png", label: "Opening Spread" },
-  { src: "/images/book/chapter.png", label: "Chapter Header" },
-  { src: "/images/book/text.png", label: "Text Layout" },
-  { src: "/images/book/toc.png", label: "Table of Contents" },
-  { src: "/images/book/dedication.png", label: "Dedication" },
-  { src: "/images/book/epilogue.png", label: "Epilogue" },
-];
+const BOOK_COVER = "/images/book/cover.png";
 
 const PARTS = [
   {
@@ -188,11 +180,6 @@ const WHY_AUDIENCES = [
 ];
 
 export default function Memoir() {
-  const [activeImage, setActiveImage] = useState(0);
-
-  const nextImage = () => setActiveImage((i) => (i + 1) % INTERIOR_IMAGES.length);
-  const prevImage = () => setActiveImage((i) => (i - 1 + INTERIOR_IMAGES.length) % INTERIOR_IMAGES.length);
-
   return (
     <>
       <PageHero
@@ -536,42 +523,10 @@ export default function Memoir() {
 
       <Section className="bg-shadow/40">
         <SectionHead eyebrow="Interior Design" title="A Glimpse Inside the Manuscript" />
-        <div className="mt-10 max-w-3xl mx-auto">
+        <div className="mt-10">
           <Reveal>
-            <div className="relative">
-              <img
-                src={INTERIOR_IMAGES[activeImage].src}
-                alt={INTERIOR_IMAGES[activeImage].label}
-                className="w-full shadow-2xl shadow-black/40 border border-gold/10"
-              />
-              <button
-                onClick={prevImage}
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-void/80 text-gold p-2 rounded-full hover:bg-void transition-colors"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-void/80 text-gold p-2 rounded-full hover:bg-void transition-colors"
-                aria-label="Next image"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
+            <InteriorBookPreview />
           </Reveal>
-          <div className="flex justify-center gap-2 mt-5 flex-wrap">
-            {INTERIOR_IMAGES.map((img, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveImage(i)}
-                className={`relative overflow-hidden transition-all duration-300 ${activeImage === i ? "ring-2 ring-gold opacity-100" : "opacity-40 hover:opacity-70"}`}
-              >
-                <img src={img.src} alt={img.label} className="w-16 h-12 object-cover" />
-              </button>
-            ))}
-          </div>
-          <p className="text-gold text-xs uppercase tracking-wider text-center mt-4">{INTERIOR_IMAGES[activeImage].label}</p>
         </div>
       </Section>
 
