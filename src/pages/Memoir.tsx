@@ -5,34 +5,15 @@ import { CTABand, NewsletterForm, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
 import { AWARD_LABEL, AWARD_URL, EMAIL } from "@/lib/content";
 
-const BOOK_COVER =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_cover_main_4e011d21.png";
+const BOOK_COVER = "/images/book/cover.png";
 
 const INTERIOR_IMAGES = [
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_opening_spread_001f34e8.png",
-    label: "Opening Spread",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_chapter_header_09c97580.png",
-    label: "Chapter Header",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_text_page_3922bd32.png",
-    label: "Text Layout",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_table_of_contents_51da1965.png",
-    label: "Table of Contents",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_dedication_page_7d45d152.png",
-    label: "Dedication",
-  },
-  {
-    src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663082684680/S8MfvHPtiwRMBxbjeesKWV/book_interior_foreword_page_2a1812d8.png",
-    label: "Foreword",
-  },
+  { src: "/images/book/opening.png", label: "Opening Spread" },
+  { src: "/images/book/chapter.png", label: "Chapter Header" },
+  { src: "/images/book/text.png", label: "Text Layout" },
+  { src: "/images/book/toc.png", label: "Table of Contents" },
+  { src: "/images/book/dedication.png", label: "Dedication" },
+  { src: "/images/book/epilogue.png", label: "Epilogue" },
 ];
 
 const PARTS = [
