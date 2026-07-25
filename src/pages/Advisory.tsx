@@ -1,8 +1,10 @@
 import { Link } from "react-router";
-import { ArrowRight, Award } from "lucide-react";
+import { ArrowRight, Award, Download, FileText } from "lucide-react";
 import { CTABand, Reveal } from "@/components/chrome";
 import { PageHero, Section, SectionHead } from "@/components/shared";
 import { AWARD_LABEL, AWARD_URL } from "@/lib/content";
+
+const PROFILE_PDF = "/profiles/zeeshan-sabri-executive-advisory-profile-2026.pdf";
 
 const SERVICES = [
   { t: "Board Advisory", d: "Governance, transformation oversight, and strategic direction for boards navigating digital and organisational change." },
@@ -51,6 +53,44 @@ export default function Advisory() {
           <Link to="/media" className="btn-ghost">See the Work in the Field</Link>
         </div>
       </PageHero>
+
+      <Section className="bg-shadow/40 border-y border-faint/20">
+        <div className="grid lg:grid-cols-[1fr_0.55fr] gap-10 items-center">
+          <Reveal>
+            <div className="flex items-center gap-3 mb-4">
+              <FileText size={20} className="text-gold" />
+              <p className="eyebrow !mb-0">Executive Advisory Profile — 2026 Edition</p>
+            </div>
+            <h2 className="font-display text-2xl lg:text-4xl font-semibold leading-tight mb-4">Download the 12-page boardroom profile</h2>
+            <p className="text-mist leading-relaxed max-w-2xl">
+              A complete overview of capabilities, career history, key projects across government, fintech, defense and energy, proprietary ClarityOS frameworks, credentials, and regional operating experience. Built for boards, procurement committees, and executive teams evaluating advisory and speaking engagements.
+            </p>
+            <div className="mt-7 flex flex-col sm:flex-row gap-4">
+              <a href={PROFILE_PDF} download className="btn-gold">
+                <Download size={16} /> Download Profile PDF
+              </a>
+              <Link to="/executive-profile" className="btn-ghost">View Online <ArrowRight size={16} /></Link>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="card-gold-edge">
+              <div className="space-y-4">
+                {[
+                  "$95M+ strategic initiatives delivered, GCC-wide",
+                  "22 years across Fortune 500, government, and ventures",
+                  "Chartered MCIPS + AI CERTs certified trainer",
+                  "5M+ citizens served via national platform",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm text-dawn/90">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
 
       <Section className="bg-shadow/40">
         <SectionHead eyebrow="Advisory Services" title="Strategic transformation guidance" />

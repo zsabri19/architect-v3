@@ -10,6 +10,7 @@ import Media from "@/pages/Media";
 import Memoir from "@/pages/Memoir";
 import Dispatch from "@/pages/Dispatch";
 import Connect from "@/pages/Connect";
+import ExecutiveProfile from "@/pages/ExecutiveProfile";
 
 const TITLES: Record<string, string> = {
   "/": "Zeeshan Sabri, Crisis-to-Clarity Architect | ClarityOS",
@@ -21,6 +22,7 @@ const TITLES: Record<string, string> = {
   "/memoir": "The Memoir: From Exile to Transformation Architect",
   "/dispatch": "The Clarity Dispatch | Zeeshan Sabri",
   "/connect": "Connect | Zeeshan Sabri",
+  "/executive-profile": "Executive Advisory Profile 2026 | Zeeshan Sabri",
 };
 
 function ScrollAndTitle() {
@@ -49,6 +51,7 @@ export default function App() {
           <Route path="/dispatch" element={<Dispatch />} />
           <Route path="/dispatch/:slug" element={<Dispatch />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/executive-profile" element={<ExecutiveProfile />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
